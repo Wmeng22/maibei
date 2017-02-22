@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta name="keywords" content="scclui框架">
+	<meta name="description" content="scclui为轻量级的网站后台管理系统模版。">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>产品列表</title>
+
+  </head>
+
+  <body>
+	 <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>productid</th>
+                      <th>src</th>
+                      <th>title</th>
+                      <th>price</th>
+                      <th>img1</th>
+                      <th>img2</th>
+                      <th>img3</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="n in list">
+                      <th ng-bind="n.indexid" class="indexid">indexid</th>
+                      <th ng-bind="n.src">src</th>
+                      <th ng-bind="n.title">title</th>
+                      <th ng-bind="n.price">price</th>
+                      <th ng-bind="n.img1">img1</th>
+                      <th ng-bind="n.img2">img2</th>
+                      <th ng-bind="n.img3">img3</th>
+                      <th>
+                      <a href="#" ng-click="exdit($event)" class="btn btn-default btn-lg active" role="button" style="padding: 4px 6px;font-size: 13px;">修改</a>
+                      <a href="#" ng-click="delete($event)" class="btn btn-default btn-lg active" role="button" style="padding: 4px 6px;font-size: 13px;">删除</a>
+                      </th>
+                    </tr>
+
+                  </tbody>
+                </table>
+  </body>
+</html>

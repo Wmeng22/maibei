@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台登录</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+   <!--  <script src="libs/vue/react.js"></script>
+    <script src="libs/vue/react-dom.js"></script>
+    <script src="libs/vue/browser.min.js"></script>
+    <script src="libs/vue/jquery.min.js"></script> -->
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="libs/bootstrap/css/bootstrap-main.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="libs/jquery-confirm/jquery-confirm.css">
+
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/commonjs.js"></script>
+    <script src="libs/common.js"></script>
+    <script src="libs/vue.js"></script>
+    <script src="js/adminlogin.js"></script>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding:0
+    }
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .clearfix:after,.clearfix:before{
+        content: "";
+        display: block;
+    }
+    .clearfix{
+        clear: both;
+    }
+    .content{width: 50%; height: 400px;margin:30px auto;}
+
+    </style>
+</head>
+<body ng-app="inAPP" ng-controller="inController">
+<div class="content">
+    <form>
+    <div class="form-group">
+    <label for="exampleInputEmail1" >Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" ng-model="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" ng-model="password" placeholder="Password">
+    </div>
+
+    <button type="submit" class="btn btn-default" ng-click="submit()">登录</button>
+    </form>
+</div>
+</body>
+<!-- <script type="text/babel">
+
+
+var Compon=React.createClass({
+    // render:function(){
+    //     return <h1><span>kk</span><a>wo</a></h1>;
+    // }
+    getInitialState(){
+        return {name:'sam',password:'password'};
+    },
+    login:function(event){
+        this.state.name = $('#name').val();
+        this.state.password = $('#password').val();
+        $.post('php/login.php',{account:this.state.name, password:this.state.password}),function(response){
+            console.log('success')
+        }
+    },
+    // change:function(event) {
+
+    //     this.setState({name:event.target.value});
+    //     this.setState({password:event.target.value});
+    // },
+    componentWillMount(){
+
+    },
+    componentDidMount(){
+
+    },
+    render(){
+        return(
+            <div>
+             <p>{this.props.api}</p>
+             <input type='text' id="name" /><br/>
+             <input type='text' id="password" /><br/>
+             <button onClick={this.login}>登录</button>
+            </div>
+
+
+            );
+    }
+});
+
+ReactDOM.render(<Compon/>,document.getElementById('div2'));
+
+</script> -->
+</html>

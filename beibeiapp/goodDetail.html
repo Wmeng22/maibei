@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale= 1.0, minimun-scale= 1.0, user-scalable=0">
+	<title>商品详情</title>
+
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="libs/bootstrap/css/bootstrap-main.css" rel="stylesheet" />-->
+	<link rel="stylesheet" type="text/css" href="libs/jquery-confirm/jquery-confirm.css">
+    <link rel="stylesheet" type="text/css" href="libs/swiper/swiper.min.css" />
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/goodDetail.css">
+    <script src="libs/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js"></script>
+    <script src="libs/swiper/swiper.min.js"></script>
+    <script src="js/commonjs.js"></script>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/common.js"></script>
+    <script src="js/goodDetail.js"></script>
+
+</head>
+<body ng-app="inAPP" ng-controller="inController">
+	<div class="header">
+            <span class="goback" ><i class="fa fa-angle-left"></i></span>
+            <div class="clear"><span id="d-detail">详情</span><span id="comment">评论</span></div>
+            <span class="menu-list"><i class="fa fa-list-ul"></i></span>
+    </div>
+    <list></list>
+    <div class="d-content" >
+    	<div class="d-banner">
+    		 <div class="swiper-container">
+				  <div class="swiper-wrapper">
+				    <div class="swiper-slide"><img ng-src="{{list[0].img1}}" alt="" ></div>
+				    <div class="swiper-slide"><img ng-src="{{list[0].img2}}" alt="" ></div>
+				    <div class="swiper-slide"><img ng-src="{{list[0].img3}}" alt="" ></div>
+				  </div>
+			 </div>
+			 <div class="swiper-pagination"></div>
+    	</div>
+
+    	<div class="d-title">
+    		<span>￥</span><span class="price" ng-bind="list[0].price">129</span>
+    		<p ng-bind="list[0].title"> 童装男童加厚外套字母连帽保暖棉服</p>
+    	</div>
+    	<div class="d-choose">
+    		请选择 &nbsp;颜色&nbsp;尺码
+    	</div>
+
+    	<div class="d-detail">
+    		<p><img src="img/1.png" alt="" style="width: 100%;height: ;"/></p>
+    	    <img src="img/d-9.jpg" alt="" />
+    	    <img src="img/d-13.jpg" alt="" />
+    	    <img src="img/d-14.jpg" alt="" />
+    	    <img src="img/d-15.jpg" alt="" />
+    	    <img src="img/d-16.jpg" alt="" />
+    	    <img src="img/d-17.jpg" alt="" />
+    	    <img src="img/d-18.jpg" alt="" />
+    	    <img src="img/d-19.jpg" alt="" />
+    	    <img src="img/d-20.jpg" alt="" />
+    	</div>
+
+	</div>
+    <div class="mask-bg"></div>
+
+    <div class="chooseColor">
+            <div class="detail">
+                <div class="left">
+                    <a><img src="img/d-1.jpg" alt=""></a>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li class="price">￥<span ng-bind="list[0].price"></span></li>
+                        <li class="stock">库存：3456件</li>
+                        <li class="please">请选择颜色&nbsp;尺码</li>
+                    </ul>
+                    <i class="fa fa-times-circle-o" ng-click="showMessage($event)"></i>
+                </div>
+            </div>
+            <div class="color">
+                <p>颜色</p>
+                <div>
+                  <!-- <span ng-repeat="idx in array">{{array[idx]}}</span> -->
+                </div>
+            </div>
+            <div class="size">
+                <p>尺码</p>
+                <div>
+                    <!-- <span>S</span><span>M</span><span>L</span> -->
+                </div>
+            </div>
+            <div class="num">
+                <div class="left">购买数量</div>
+                <div class="right">
+                    <span class="minus" ng-click="changeNum($event)"><i class="fa fa-minus"></i></span>
+                    <span class="number">1</span>
+                    <span class="plus" ng-click="changeNum($event)"><i class="fa fa-plus"></i></span>
+                </div>
+            </div>
+            <div class="toCart" ng-click="addCar()">确定</div>
+    </div>
+	<!--评论-->
+	<div class="d-comment">
+		<ul>
+			<li>
+				<div class="name">
+					<div class="c-left">
+					<img src="img/c-1.webp" alt="" />
+					<span>wm</span>
+					</div>
+					<div class="c-right">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+
+					</div>
+
+				</div>
+				<p>不错，买大了.还不错，买大了！同城发货乜太慢了！不给力阿。下次找个好点的快递！</p>
+				<p><span>颜色：</span><span>尺寸：</span></p>
+				<p><span>购买日期：2017-1-5</span></p>
+
+			</li>
+		</ul>
+	</div>
+    <div class="d-footer">
+        <a href="shopcar.html"><div class="d-car">
+        	<i class="fa fa-shopping-cart"></i>
+        	<span>0</span>
+        </div></a>
+        <div class="add-car" ng-click="showMessage($event)">加入购物车</div>
+        <a href="shopcar.html"><div class="d-tobuy">立即购买</div></a>
+
+
+    </div>
+</body>
+</html>

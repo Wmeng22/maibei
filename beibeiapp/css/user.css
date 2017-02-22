@@ -1,0 +1,102 @@
+.u-user {
+  height: 45px;
+  line-height: 45px;
+  width: 100%;
+  padding: 20px 20px;
+  background: url(../img/61.jpg) no-repeat center center; }
+  .u-user span:first-child {
+    float: left;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: block; }
+    .u-user span:first-child img {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%; }
+  .u-user span:nth-child(2) {
+    display: block;
+    float: left;
+    font-size: 16px;
+    margin-left: 10px;
+    color: #fff;
+    font-weight: bold; }
+    .u-user span:nth-child(2) img {
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+      margin-top: 6px; }
+    .u-user span:nth-child(2) p {
+      height: 26px;
+      line-height: 26px; }
+  .u-user span:last-child {
+    margin-left: 120px; }
+    .u-user span:last-child i {
+      color: #fff; }
+
+.u-nav {
+  height: 40px;
+  padding: 8px 0;
+  background: #fff;
+  margin-bottom: 10px; }
+  .u-nav li {
+    float: left;
+    width: 32.3333%;
+    text-align: center;
+    border-right: solid 1px #ccc; }
+    .u-nav li span {
+      font-weight: bold;
+      font-size: 18px; }
+    .u-nav li p {
+      color: #98999A; }
+  .u-nav li:last-child {
+    border-right: none; }
+
+.menber {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 10px; }
+  .menber li {
+    height: 57px;
+    padding: 0 15px;
+    line-height: 57px;
+    border: 1px solid #e7eaec; }
+    .menber li .left {
+      width: 50%;
+      float: left;
+      color: #555; }
+      .menber li .left span {
+        margin-right: 10px;
+        line-height: 30px;
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+        height: 30px;
+        border-radius: 50%;
+        background: #fc215e; }
+        .menber li .left span i {
+          color: #fff;
+          margin-left: 4px; }
+      .menber li .left .span1 {
+        background: #4fc6ee; }
+      .menber li .left .span2 {
+        background: #ffa64c; }
+    .menber li .right {
+      width: 50%;
+      float: right;
+      text-align: right;
+      height: 57px;
+      line-height: 57px; }
+      .menber li .right span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        line-height: 20px;
+        text-align: center;
+        color: #fff;
+        background-color: #8E488E;
+        margin-right: 10px; }
+      .menber li .right i {
+        color: #555;
+        font-size: 16px; }

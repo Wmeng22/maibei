@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta name="keywords" content="scclui框架">
+	<meta name="description" content="scclui为轻量级的网站后台管理系统模版。">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>浏览商品</title>
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="libs/bootstrap/css/bootstrap-main.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="libs/jquery-confirm/jquery-confirm.css">
+    <link rel="stylesheet" type="text/css" href="css/test1.css">
+    <link rel="stylesheet" href="add/css/pintuer.css">
+    <link rel="stylesheet" href="add/css/admin.css">
+  </head>
+
+  <body ng-app="inAPP" ng-controller="inController">
+  <div class="mask-bg"></div>
+  <div id="exdit">
+  <div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改内容</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="">
+      <div class="form-group">
+        <div class="label">
+          <label>产品编号：</label>
+        </div>
+        <div class="field">
+          <input type="text" ng-model="productnum" class="input w50" value="" name="productnum" data-validate="required:请输入编号" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>标题：</label>
+        </div>
+        <div class="field">
+          <input type="text" ng-model="title" class="input w50" value="" name="title" data-validate="required:请输入标题" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>图片：</label>
+        </div>
+        <div class="field">
+          <input type="text" ng-model="src" id="url1" name="img" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" />
+          <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
+          <div class="tipss">图片尺寸：500*500</div>
+        </div>
+      </div>
+
+      <if condition="$iscid eq 1">
+        <div class="form-group">
+          <div class="label">
+            <label>颜色：</label>
+          </div>
+          <div class="field">
+           <input type="text" class="input" ng-model="color" name="s_title" value="" />
+            <div class="tips"></div>
+          </div>
+        </div>
+
+      </if>
+
+
+
+      <div class="clear"></div>
+      <div class="form-group">
+        <div class="label">
+          <label>img1:</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" ng-model="img1" name="s_title" value="" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>img2：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" ng-model="img2" name="s_keywords" value=""/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>img3：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" ng-model="img3" name="s_desc" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>价格：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" ng-model="price" name="sort" value="0"  data-validate="number:排序必须为数字" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>发布时间：</label>
+        </div>
+        <div class="field">
+          <!-- <script src="add/js/laydate/laydate.js"></script> -->
+          <input type="text" class="laydate-icon input w50" ng-model="adddata" name="datetime"  value=""  data-validate="required:日期不能为空" style="padding:10px!important; height:auto!important;border:1px solid #ddd!important;" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>发布人：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" ng-model="issuer" name="authour" value=""  />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>尺寸大小：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" ng-model="size" name="views" value="" data-validate="member:只能为数字"  />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit" ng-click="sub()"> 确定</button>
+          <button class="button bg-main icon-check-square-o" type="submit" ng-click="cancel()">取消</button>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+
+
+
+	 <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>productid</th>
+                      <th>src</th>
+                      <th>title</th>
+                      <th>price</th>
+                      <th>img1</th>
+                      <th>img2</th>
+                      <th>img3</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="n in list">
+                      <th ng-bind="n.indexid" class="indexid">indexid</th>
+                      <th ng-bind="n.src">src</th>
+                      <th ng-bind="n.title">title</th>
+                      <th ng-bind="n.price">price</th>
+                      <th ng-bind="n.img1">img1</th>
+                      <th ng-bind="n.img2">img2</th>
+                      <th ng-bind="n.img3">img3</th>
+                      <th>
+                      <a href="#" ng-click="exdit($event)" class="btn btn-default btn-lg active" role="button" style="padding: 4px 6px;font-size: 13px;">修改</a>
+                      <a href="#" ng-click="delete($event)" class="btn btn-default btn-lg active" role="button" style="padding: 4px 6px;font-size: 13px;">删除</a>
+                      </th>
+                    </tr>
+
+                  </tbody>
+     </table>
+
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/commonjs.js"></script>
+    <script src="libs/common.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

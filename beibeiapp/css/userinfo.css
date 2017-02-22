@@ -1,0 +1,12 @@
+.input-group {
+    width: 85%;
+    margin: auto;
+    margin-top: 10px;
+}
+ .bbtn {
+    width: 80%;
+    margin-top: 20px;
+    background-color: #496;
+    border-color: #496;
+}
+.layout-body {text-align: center;}

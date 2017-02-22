@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale= 1.0, minimun-scale= 1.0, user-scalable=0">
+    <title>确认下单</title>
+
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/goodDetail.css">
+    <link rel="stylesheet" type="text/css" href="css/sure.css">
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js"></script>
+    <script src="libs/vue.js"></script>
+    <script src="js/commonjs.js"></script>
+
+
+
+</head>
+<body>
+    <div class="header">
+            <span class="goback" ><i class="fa fa-angle-left"></i></span>
+            <div>确认下单</div>
+            <span class="menu-list"><i class="fa fa-list-ul"></i></span>
+    </div>
+    <div class="top-list">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="Listhomeword.html">分类查询</a></li>
+            <li><a href="shopcar.html">购物车</a></li>
+            <li><a href="user.html">会员中心</a></li>
+
+        </ul>
+    </div>
+    <div class="content" id="demo1">
+        <div class="address">
+            <div><i class="fa fa-map-marker"></i></div>
+            <div>
+                <a href="address.html"><span>收货人：张三</span><span>{{message}}</span></a>
+                <a href="address.html">收货地址：广东省广州市天河区天河路99999号天河大楼11111楼4114</a>
+            </div>
+            <div><a href="address.html"><i class="fa fa-angle-right"></i></a></div>
+        </div>
+        <a href="address.html" class="address empty">
+            <i class="fa fa-plus-circle"></i>添加收货地址
+        </a>
+       <!--  <div class="shoppingcar-list" >
+            <div class="shopname">店铺1</div>
+            <div class="productlist">
+                <div class="product-img"><a href="#"><img src="img/l-1.jpg"></a></div>
+                <div class="item-content">
+                    <div class="product-name" >童装女装加绒卫衣纯棉T恤打底衫3</div>
+                    <div class="item-controller">
+                        <div class="product-price">￥ 120</div>
+                        <div class="item-count">X <span>2</span></div>
+                    </div>
+                </div>
+            </div>
+             <div class="list-group">
+                <div class="list-group-item">
+                    <div class="col-xs-4">配送方式</div>
+                    <div class="col-xs-8 text-right">快递免邮</div>
+                </div>
+                <div class="list-group-item">
+                    <div class="col-xs-4">运费险</div>
+                    <div class="col-xs-8"><input type="text" name="invoice" placeholder="请购买运费险"/></div>
+                </div>
+                <div class="list-group-item">
+                    <div class="col-xs-4">买家留言</div>
+                    <div class="col-xs-8"><input type="text" name="notes" placeholder="选填"/></div>
+                </div>
+                <div class="list-group-item">
+                    <div class="col-xs-12 text-right">共4件商品，合计：<span class="item-price">￥ 480.00</span></div>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+
+    <div class="footer">
+        <div class="col-xs-8 text-right">共8件，总金额：<span class="item-price" id="totalAmount" amount="960">￥ 960.00</span></div>
+        <div class="col-xs-4 toorder">提交订单</div>
+    </div>
+
+
+</body>
+<script src="js/sure.js"></script>
+
+</html>

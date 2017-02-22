@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale= 1.0, minimun-scale= 1.0, user-scalable=0">
+	<title>购物车</title>
+
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/goodDetail.css">
+    <link rel="stylesheet" type="text/css" href="css/shopcar.css">
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="libs/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js"></script>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/commonjs.js"></script>
+    <script src="libs/common.js"></script>
+    <script src="js/shopcar.js"></script>
+
+
+</head>
+<body ng-app="inAPP" ng-controller="inController">
+	<div class="header">
+            <span class="goback" ><i class="fa fa-angle-left"></i></span>
+            <div>购物车</div>
+            <span class="menu-list"><i class="fa fa-list-ul"></i></span>
+    </div>
+    <div class="top-list">
+    	<ul>
+    		<li><a href="index.html">首页</a></li>
+    		<li><a href="Listhomeword.html">分类查询</a></li>
+    		<li><a href="shopcar.html">购物车</a></li>
+    		<li><a href="user.html">会员中心</a></li>
+
+    	</ul>
+    </div>
+    <div class="d-content">
+    	<ul class="s-list" ng-repeat="n in list">
+    		<li class="clear">
+    			<div class="check" >
+    				<i class="fa fa-circle-thin check1" ng-click="check($event)"></i><i class="fa fa-check-circle check2" ng-click="check($event)"></i>
+    			</div>
+    			<div class="img"><a href="goodDetail.html?{{n.indexid}}"><img ng-src="{{n.src}}" alt="" /></a></div>
+    		    <div class="s-detail">
+    		    	<h4 ng-bind="n.title"></h4>
+                    <h3>
+                        <span>颜色：{{n.Color}}</span>&nbsp;&nbsp;<span>尺码：{{n.Size}}</span>
+                    </h3>
+    		    	<p>
+                        <span>￥</span>
+    		    		<span class="price">{{n.price}}</span>
+    		    		<span class="clear"><a class="minus" ng-click="changeNum($event)"><i class="fa fa-minus" ></i></a><a class="number" ng-bind="n.num">1</a><a class="plus" ng-click="changeNum($event)" ><i class="fa fa-plus" ></i></a><i class="fa fa-trash-o" ng-click="delete($event)" id="delete"></i></span>
+
+    		    	</p>
+    		    </div>
+
+    		</li>
+    	</ul>
+    </div>
+	 <div class="d-footer">
+        <div class="s-car" ng-click="totalCheck($event)">
+        	<i class="fa fa-circle-thin" ></i>
+
+        	<span>全选</span>
+        </div>
+        <div class="s-car-1" ng-click="totalCheck($event)">
+
+        	<i class="fa fa-check-circle" style="color: #496;"></i>
+        	<span>全选</span>
+        </div>
+
+        <a href="shopcar.html"><div class="s-add-car">支付方式<i class="fa fa-angle-right" style="margin-left: 5px;font-size: 16px;"></i></div></a>
+        <div class="s-tobuy" ng-click="toSure()"><span>确认并支付(</span><span class="total">0</span><span>)</span></div>
+
+        </div>
+
+
+    </div>
+</body>
+</html>

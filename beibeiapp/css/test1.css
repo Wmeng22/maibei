@@ -1,0 +1,20 @@
+.mask-bg {
+    background: rgba(47,52,61,.4);
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#exdit{
+    position: absolute;
+    top:30px;
+    left: 200px;
+    width: 500px;
+    height: 600px;
+    z-index: 9999;
+    display: none;
+    background: #fff;
+}
